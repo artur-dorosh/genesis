@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { PlanetsService } from './services/planets.service';
 import { ResidentsListComponent } from './components/residents-list/residents-list.component';
 import { ResidentComponent } from './components/resident/resident.component';
+import { ResidentInfoComponent } from './components/resident-info/resident-info.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ResidentComponent } from './components/resident/resident.component';
     PlanetInfoComponent,
     ResidentsListComponent,
     ResidentComponent,
+    ResidentInfoComponent,
   ],
   imports: [
     BrowserModule,

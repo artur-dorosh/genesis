@@ -1,3 +1,6 @@
-<div class="residents">
-  <app-resident *ngFor="let resident of residentsUrls" [resident]="resident"></app-resident>
+<div class="residents" *ngIf="residents">
+  <app-resident *ngFor="let resident of residents"
+                [resident]="resident"
+                routerLink="/people/{{ getResidentId(resident) }}">
+  </app-resident>
 </div>

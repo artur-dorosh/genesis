@@ -7,7 +7,7 @@ import { IResident } from '../../interfaces/resident.interface';
   styleUrls: ['./resident.component.scss']
 })
 export class ResidentComponent implements OnInit {
-  @Input() resident: string;
+  @Input() resident: IResident;
 
   constructor() { }
 

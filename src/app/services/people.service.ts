@@ -10,9 +10,7 @@ export class PeopleService {
 
   constructor(private http: HttpClient) { }
 
-  getResidentsList(residents: string[]): Observable<any> {
-    const params = {search: `5`};
-
-    return this.http.get(`${BASE_URL}/people/`, { params });
+  getResident(id: number): Observable<any> {
+    return this.http.get(`${BASE_URL}/people/${id}`);
   }
 }
