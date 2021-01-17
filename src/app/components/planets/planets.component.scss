@@ -1,0 +1,18 @@
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 15px 0;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFE300;
+  background-color: #484e55;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #41474e;
+  }
+}

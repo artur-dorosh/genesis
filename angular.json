@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "star-wars"
+  "defaultProject": "star-wars",
+  "cli": {
+    "analytics": "930405e7-f669-4be9-8b54-e90f438aec14"
+  }
 }
