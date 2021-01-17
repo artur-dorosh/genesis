@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PlanetsService } from '../../services/planets.service';
-import { map } from 'rxjs/operators';
+import { Component, Input } from '@angular/core';
 import { IPlanet } from '../../interfaces/planet.interface';
 
 @Component({
@@ -8,16 +6,10 @@ import { IPlanet } from '../../interfaces/planet.interface';
   templateUrl: './planets-list.component.html',
   styleUrls: ['./planets-list.component.scss']
 })
-export class PlanetsListComponent implements OnInit {
-  planets: IPlanet[];
+export class PlanetsListComponent {
+  @Input() planets: IPlanet[];
 
-  constructor(private planetsService: PlanetsService) { }
-
-  ngOnInit(): void {
-    this.planetsService.getPlanetsList().pipe(
-      map(response => response.results)
-    ).subscribe((planets: IPlanet[]) => this.planets = planets);
-  }
+  constructor() { }
 
   getPlanetId(planet: IPlanet): string {
     const result = planet.url.match(/\d+/);

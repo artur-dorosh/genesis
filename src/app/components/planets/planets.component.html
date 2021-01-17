@@ -1,6 +1,6 @@
 <div class="container">
-  <app-header></app-header>
-  <app-planets-list></app-planets-list>
+  <app-header [currentPage]="currentPage" [pagesCount]="pagesCount"></app-header>
+  <app-planets-list [planets]="planets"></app-planets-list>
 
-  <div class="load-more">Load more</div>
+  <div class="load-more" *ngIf="currentPage < pagesCount" (click)="loadMore()">Load more</div>
 </div>
