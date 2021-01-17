@@ -19,4 +19,10 @@ export class PlanetsListComponent implements OnInit {
     ).subscribe((planets: IPlanet[]) => this.planets = planets);
   }
 
+  getPlanetId(planet: IPlanet): string {
+    const result = planet.url.match(/\d+/);
+    const id = result && result[0];
+
+    return id || '';
+  }
 }

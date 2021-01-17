@@ -1,0 +1,49 @@
+.planet-info {
+  padding: 30px;
+
+  &__name {
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+
+  &__block {
+    margin: 10px 0;
+    text-align: left;
+
+    & > * {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__residents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      font-size: 30px;
+      line-height: 34px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__no-residents {
+    font-size: 26px;
+    line-height: 32px;
+    font-style: italic;
+    text-align: center;
+  }
+}

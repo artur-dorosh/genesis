@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="planet-info" *ngIf="planet">
+    <div class="planet-info__name">{{ planet.name }}</div>
+
+    <div class="planet-info__description">
+      <div class="planet-info__block">
+        <div class="planet-info__rotation-period">Rotation period: <i>{{ planet.rotation_period }}</i></div>
+        <div class="planet-info__gravity">Gravity: <i>{{ planet.gravity }}</i></div>
+        <div class="planet-info__diameter">Diameter: <i>{{ planet.diameter }}</i></div>
+      </div>
+
+      <div class="planet-info__block">
+        <div class="planet-info__terrain">Terrain: <i>{{ planet.terrain }}</i></div>
+        <div class="planet-info__climate">Climate: <i>{{ planet.climate }}</i></div>
+        <div class="planet-info__population">Population: <i>{{ planet.population }}</i></div>
+      </div>
+    </div>
+
+    <div class="planet-info__residents" *ngIf="planet.residents.length">
+      <div class="planet-info__residents-title">Residents</div>
+      <app-residents-list [residentsUrls]="planet.residents"></app-residents-list>
+    </div>
+    <div class="planet-info__no-residents" *ngIf="!planet.residents.length">This planet has no residents</div>
+  </div>
+</div>
