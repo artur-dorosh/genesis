@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PeopleService } from '../../services/people.service';
 import { IResident } from '../../interfaces/resident.interface';
-import { map } from 'rxjs/operators';
 import { forkJoin, Observable } from 'rxjs';
-import { IPlanet } from '../../interfaces/planet.interface';
 
 @Component({
   selector: 'app-residents-list',
@@ -14,7 +12,7 @@ export class ResidentsListComponent implements OnInit {
   @Input() residentsUrls: string[];
 
   residents: IResident[];
-  requests: Observable<any>[] = [];
+  requests: Observable<IResident>[] = [];
 
   constructor(private peopleService: PeopleService) { }
 
@@ -23,6 +21,7 @@ export class ResidentsListComponent implements OnInit {
       this.requests.push(this.peopleService.getResident(+id));
     });
 
+    // not found another decision without multiple requests for every man, if I got right - API doesn't provide this opportunity
     forkJoin(this.requests).subscribe((residents: IResident[]) => this.residents = residents);
   }
 

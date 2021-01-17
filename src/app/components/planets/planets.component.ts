@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanetsService } from '../../services/planets.service';
+import { IPlanetResponse, PlanetsService } from '../../services/planets.service';
 import { map } from 'rxjs/operators';
 import { IPlanet } from '../../interfaces/planet.interface';
 
@@ -18,7 +18,7 @@ export class PlanetsComponent implements OnInit {
 
   ngOnInit(): void {
     this.planetsService.getPlanetsList(this.currentPage.toString()).pipe(
-      map(response => {
+      map((response: IPlanetResponse) => {
         this.pagesCount = Math.ceil(response.count / 10);
         return response.results;
       })
@@ -31,7 +31,7 @@ export class PlanetsComponent implements OnInit {
     }
 
     this.planetsService.getPlanetsList((this.currentPage + 1).toString()).pipe(
-     map(response => response.results)
+     map((response: IPlanetResponse) => response.results)
     ).subscribe((planets: IPlanet[]) => {
       this.planets = this.planets.concat(planets);
       this.currentPage++;

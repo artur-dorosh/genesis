@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IPlanet } from '../../interfaces/planet.interface';
 
 @Component({
@@ -6,12 +6,9 @@ import { IPlanet } from '../../interfaces/planet.interface';
   templateUrl: './planet.component.html',
   styleUrls: ['./planet.component.scss']
 })
-export class PlanetComponent implements OnInit {
+export class PlanetComponent {
   @Input() planet: IPlanet;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
