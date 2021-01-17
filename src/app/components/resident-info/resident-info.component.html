@@ -1,8 +1,10 @@
 <div class="container">
   <div class="resident" *ngIf="resident">
     <div class="resident__name">{{ resident.name }}</div>
-    <div class="resident__height">Height: <i>{{ resident.height }}</i></div>
-    <div class="resident__mass">Mass: <i>{{ resident.mass }}</i></div>
-    <div class="resident__gender">Gender: <i>{{ resident.gender }}</i></div>
+    <div class="resident__description">
+      <div class="resident__height"><i>Height:</i> {{ resident.height }}</div>
+      <div class="resident__mass"><i>Mass:</i> {{ resident.mass }}</div>
+      <div class="resident__gender"><i>Gender:</i> {{ resident.gender }}</div>
+    </div>
   </div>
 </div>

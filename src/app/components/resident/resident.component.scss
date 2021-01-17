@@ -2,12 +2,13 @@
   margin: 10px 0;
   padding: 15px 0;
   width: 100%;
+  color: #c8c8c8;
+  background-color: #313539;
   text-align: center;
   border-radius: 4px;
-  box-shadow: 1px 1px 4px #000000;
 
   &:hover {
-    box-shadow: 0 0 4px #000000;
+    background-color: #3a3f43;
     cursor: pointer;
   }
 
